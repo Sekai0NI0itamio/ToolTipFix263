@@ -10,7 +10,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
-import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
@@ -46,10 +45,4 @@ public abstract class TooltipFixMixin {
         Helper.newFix(components, font, x, guiWidth());
     }
 
-    @ModifyArg(method = TOOLTIP_METHOD,
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner;positionTooltip(IIIIII)Lorg/joml/Vector2ic;"),
-            index = 2)
-    public int tooltipfix$shiftMouseX(int mouseX) {
-        return Helper.shiftedMouseX(mouseX);
-    }
 }
