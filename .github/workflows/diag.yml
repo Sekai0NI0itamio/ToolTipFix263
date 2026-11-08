@@ -17,3 +17,7 @@ jobs:
           javap -classpath "$JAR" net.minecraft.client.gui.GuiGraphicsExtractor | grep -i tooltip
           echo "=== GuiGraphics ==="
           javap -classpath "$JAR" net.minecraft.client.gui.GuiGraphics | grep -i tooltip | head
+      - if: always()
+        run: |
+          JAR=$(find ~/.gradle /home/runner -name "minecraft-merged*.jar" 2>/dev/null | head -1)
+          javap -classpath "$JAR" net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipPositioner

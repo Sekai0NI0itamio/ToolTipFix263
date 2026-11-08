@@ -31,7 +31,7 @@ import java.util.List;
 @Mixin(GuiGraphicsExtractor.class)
 public abstract class TooltipFixMixin {
 
-    private static final String TOOLTIP_METHOD = "tooltip(Lnet/minecraft/client/gui/Font;Ljava/util/List;IILnet/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner;Lnet/minecraft/resources/Identifier;)V";
+    private static final String TOOLTIP_METHOD = "tooltip(Lnet/minecraft/client/gui/Font;Ljava/util/List;IILnet/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner;Lnet/minecraft/resources/Identifier;Z)V";
 
     @Shadow
     public abstract int guiWidth();
@@ -42,7 +42,7 @@ public abstract class TooltipFixMixin {
     }
 
     @Inject(method = TOOLTIP_METHOD, at = @At(value = "HEAD"))
-    public void tooltipfix$fix(Font font, List<ClientTooltipComponent> components, int x, int y, ClientTooltipPositioner positioner, Identifier id, CallbackInfo ci) {
+    public void tooltipfix$fix(Font font, List<ClientTooltipComponent> components, int x, int y, ClientTooltipPositioner positioner, Identifier id, boolean flag, CallbackInfo ci) {
         Helper.newFix(components, font, x, guiWidth());
     }
 
