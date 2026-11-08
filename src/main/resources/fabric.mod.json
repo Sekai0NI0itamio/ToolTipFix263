@@ -1,0 +1,25 @@
+{
+	"schemaVersion": 1,
+	"id": "itamio_tooltipfix",
+	"version": "${version}",
+	"name": "ToolTip Fix",
+	"description": "Fixes ToolTips from running off the screen. Unofficial port of ToolTipFix by kyrptonaught (MIT license, https://github.com/kyrptonaught/tooltipfix) to Minecraft 26.3. This is an unofficial port — all credit for the original concept, design, and logic goes to kyrptonaught. Code updated to 26.3 by Itamio. Itamio does not take credit for any of the original assets or logic. See NOTICE for licensing details.",
+	"authors": ["Itamio"],
+	"contact": {
+		"homepage": "https://github.com/Sekai0NI0itamio/ToolTipFix263",
+		"sources": "https://github.com/Sekai0NI0itamio/ToolTipFix263",
+		"issues": "https://github.com/Sekai0NI0itamio/ToolTipFix263/issues"
+	},
+	"license": "MIT",
+	"icon": "assets/tooltipfix263/icon.png",
+	"environment": "client",
+	"mixins": [
+		"tooltipfix263.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.20.1",
+		"minecraft": "~26.3",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

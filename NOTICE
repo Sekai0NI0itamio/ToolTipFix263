@@ -1,0 +1,18 @@
+ToolTip Fix (Itamio port for Minecraft 26.3)
+
+This mod is an unofficial port of "ToolTipFix" by kyrptonaught
+(https://github.com/kyrptonaught/tooltipfix, MIT license).
+
+Original mod (Minecraft 1.21.1 and earlier, Fabric):
+- Modrinth: https://modrinth.com/mod/tooltipfix
+- Source: https://github.com/kyrptonaught/tooltipfix
+
+All credit for the original concept, design, and logic goes to
+kyrptonaught. This port was created by Itamio to bring the functionality to
+Minecraft 26.3 because the original mod has not been updated to this
+version.
+
+Itamio does not take credit for any of the original assets or logic.
+The code was self-updated to be compatible with Minecraft 26.3 (Fabric,
+Mojang mappings). The original MIT license (Copyright (c) 2019 kyrptonaught)
+is preserved in the LICENSE file.
