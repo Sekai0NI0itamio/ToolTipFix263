@@ -2,7 +2,7 @@ package itamio.tooltipfix.mixin;
 
 import itamio.tooltipfix.Helper;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipPositioner;
 import org.spongepowered.asm.mixin.Mixin;
@@ -27,10 +27,10 @@ import java.util.List;
  * not take credit for any of the original assets or logic. See NOTICE for
  * licensing details.
  */
-@Mixin(GuiGraphics.class)
+@Mixin(GuiGraphicsExtractor.class)
 public abstract class TooltipFixMixin {
 
-    private static final String TOOLTIP_METHOD = "renderTooltipInternal(Lnet/minecraft/client/gui/Font;Ljava/util/List;IILnet/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner;)V";
+    private static final String TOOLTIP_METHOD = "tooltip(Lnet/minecraft/client/gui/Font;Ljava/util/List;IILnet/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner;Lnet/minecraft/resources/Identifier;Z)V";
 
     @Shadow
     public abstract int guiWidth();
