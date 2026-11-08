@@ -9,8 +9,7 @@ import org.spongepowered.asm.mixin.gen.Accessor;
  * Accessor for ClientTextTooltip's text, ported from ToolTipFix by
  * kyrptonaught (https://github.com/kyrptonaught/tooltipfix, MIT license).
  * All credit for the original concept, design, and logic goes to
- * kyrptonaught; this is an unofficial port by Itamio to Minecraft 26.3
- * (Fabric). See NOTICE for licensing details.
+ * kyrptonaught; this is an unofficial port by Itamio to Minecraft 1.20.1 (Forge). See NOTICE for licensing details.
  */
 @Mixin(ClientTextTooltip.class)
 public interface ClientTextTooltipAccessor {

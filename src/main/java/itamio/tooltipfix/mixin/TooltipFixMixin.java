@@ -22,7 +22,7 @@ import java.util.List;
  * <p>
  * <p>
  * All credit for the original concept, design, and logic goes to
- * kyrptonaught. This is an unofficial port by Itamio to Minecraft 1.20.1 (Fabric)
+ * kyrptonaught. This is an unofficial port by Itamio to Minecraft 1.20.1 (Forge)
  * because the original mod has not been updated to this version. Itamio does
  * not take credit for any of the original assets or logic. See NOTICE for
  * licensing details.
