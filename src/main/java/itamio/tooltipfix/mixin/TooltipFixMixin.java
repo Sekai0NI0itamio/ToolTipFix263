@@ -2,10 +2,9 @@ package itamio.tooltipfix.mixin;
 
 import itamio.tooltipfix.Helper;
 import net.minecraft.client.gui.Font;
-import net.minecraft.client.gui.GuiGraphicsExtractor;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipComponent;
 import net.minecraft.client.gui.screens.inventory.tooltip.ClientTooltipPositioner;
-import net.minecraft.resources.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -23,15 +22,15 @@ import java.util.List;
  * <p>
  * <p>
  * All credit for the original concept, design, and logic goes to
- * kyrptonaught. This is an unofficial port by Itamio to Minecraft 26.3 (Fabric)
+ * kyrptonaught. This is an unofficial port by Itamio to Minecraft 1.21.1 (Fabric)
  * because the original mod has not been updated to this version. Itamio does
  * not take credit for any of the original assets or logic. See NOTICE for
  * licensing details.
  */
-@Mixin(GuiGraphicsExtractor.class)
+@Mixin(GuiGraphics.class)
 public abstract class TooltipFixMixin {
 
-    private static final String TOOLTIP_METHOD = "tooltip(Lnet/minecraft/client/gui/Font;Ljava/util/List;IILnet/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner;Lnet/minecraft/resources/Identifier;Z)V";
+    private static final String TOOLTIP_METHOD = "renderTooltipInternal(Lnet/minecraft/client/gui/Font;Ljava/util/List;IILnet/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner;)V";
 
     @Shadow
     public abstract int guiWidth();
@@ -42,7 +41,7 @@ public abstract class TooltipFixMixin {
     }
 
     @Inject(method = TOOLTIP_METHOD, at = @At(value = "HEAD"))
-    public void tooltipfix$fix(Font font, List<ClientTooltipComponent> components, int x, int y, ClientTooltipPositioner positioner, Identifier id, boolean flag, CallbackInfo ci) {
+    public void tooltipfix$fix(Font font, List<ClientTooltipComponent> components, int x, int y, ClientTooltipPositioner positioner, CallbackInfo ci) {
         Helper.newFix(components, font, x, guiWidth());
     }
 
