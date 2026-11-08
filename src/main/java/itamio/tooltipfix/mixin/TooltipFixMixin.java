@@ -31,7 +31,7 @@ import java.util.List;
 @Mixin(GuiGraphics.class)
 public abstract class TooltipFixMixin {
 
-    private static final String TOOLTIP_METHOD = "tooltip(Lnet/minecraft/client/gui/Font;Ljava/util/List;IILnet/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner;Lnet/minecraft/resources/Identifier;)V";
+    private static final String TOOLTIP_METHOD = "renderTooltip(Lnet/minecraft/client/gui/Font;Ljava/util/List;IILnet/minecraft/client/gui/screens/inventory/tooltip/ClientTooltipPositioner;Lnet/minecraft/resources/Identifier;)V";
 
     @Shadow
     public abstract int guiWidth();
