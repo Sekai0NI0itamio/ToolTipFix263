@@ -41,7 +41,7 @@ public abstract class TooltipFixMixin {
     }
 
     @Inject(method = TOOLTIP_METHOD, at = @At(value = "HEAD"))
-    public void tooltipfix$fix(Font font, List<ClientTooltipComponent> components, int x, int y, ClientTooltipPositioner positioner, CallbackInfo ci) {
+    public void tooltipfix$fix(Font font, List<ClientTooltipComponent> components, int x, int y, ClientTooltipPositioner positioner, Identifier id, boolean flag, CallbackInfo ci) {
         Helper.newFix(components, font, x, guiWidth());
     }
 
